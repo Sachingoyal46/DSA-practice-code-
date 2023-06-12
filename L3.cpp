@@ -512,48 +512,49 @@ int main()
 
 // complex pattern****************************************
 
-// int n;
-// cin>>n;
-// int i=1;
-// while(i<=n)
-// {
-//     int space =n-i;
-//     while(space>0)
-//     {
-//         cout<<" ";
-//         space--;
+int n;
+cin>>n;
+int i=1;
+while(i<=n)
+{
+    int space =n-i;
+    while(space>0)
+    {
+        cout<<" ";
+        space--;
 
-//     }
-//     int j=1;
-//     int s=1;
-//     while(j<=i)
-//     {
-//         cout<<s;
-//         s++;
-//         j++;
+    }
+    int j=1;
+    int s=1;
+    while(j<=i)
+    {
+        cout<<s;
+        s++;
+        j++;
 
-//     }
-//     int k=i-1;
-//     while(k>0)
-//     {
-//         cout<<k;
-//         k--;
-//     }
-//     int side=n-i;
-//     while(side>0)
-//     {
-//         cout<<" ";
-//         side--;
-//     }
-//     cout<<endl;
-//     i++;
-// }
+    }
+    int k=i-1;
+    while(k>0)
+    {
+        cout<<k;
+        k--;
+    }
+    int side=n-i;
+    while(side>0)
+    {
+        cout<<" ";
+        side--;
+    }
+    cout<<endl;
+    i++;
+}
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // dabangg pattern************************************************
 
 // int n;
+// cout<<"enter the number"<<endl;
 // cin>>n;
 
 
@@ -592,44 +593,44 @@ int main()
 //     i++;
 // }
 
-int n;
-cin>>n;
+// int n;
+// cin>>n;
 
 
-int i=1;
-while(i<=n)
-{
-    int j=n-i+1;
-    int count =1;
-    while(j>0)
-    {
-        cout<<'K';
-        count++;
-        j--;
-    }
-    int space=i-1;
-    while(space>0)
-    {
-        cout<<"❤️";
-        space--;
-    }
-    int blank=i-1;
-    while(blank>0)
-    {
-        cout<<"❤️";
-        blank--;
-    }
-    int k=n-i+1;
-    int s=n-i+1;
-    while(k>0)
-    {
-        cout<<'K';
-        s--;
-        k--;
-    }
-    cout<<endl;
-    i++;
-}
+// int i=1;
+// while(i<=n)
+// {
+//     int j=n-i+1;
+//     int count =1;
+//     while(j>0)
+//     {
+//         cout<<'K';
+//         count++;
+//         j--;
+//     }
+//     int space=i-1;
+//     while(space>0)
+//     {
+//         cout<<"❤️";
+//         space--;
+//     }
+//     int blank=i-1;
+//     while(blank>0)
+//     {
+//         cout<<"❤️";
+//         blank--;
+//     }
+//     int k=n-i+1;
+//     int s=n-i+1;
+//     while(k>0)
+//     {
+//         cout<<'K';
+//         s--;
+//         k--;
+//     }
+//     cout<<endl;
+//     i++;
+// }
 
 
 }
