@@ -6,6 +6,8 @@
 #include<deque>
 #include<list>
 #include<stack>
+#include<queue>
+#include<set>
 
 using namespace std;
 
@@ -155,6 +157,113 @@ int main()
 
 
 // ******************stack************************************
+
+// stack<string>s;
+// s.push("sachin");
+// s.push("goyal");
+
+// cout<<"top elemnt"<<" "<<s.top()<<endl;
+// cout<<"size of stack"<<s.size()<<endl;
+// cout<<"empty"<<s.empty()<<endl;
+
+
+// *******************queue**************************************
+
+// queue<string>q;
+// q.push("sachin");
+// q.push("goyal");
+
+// cout<<"first elements"<<q.front()<<endl;
+
+// q.pop();
+
+// cout<<"first elelemt "<<q.front()<<endl;
+
+// cout<<"size "<<q.size()<<endl;
+
+
+//****************priority queue************************************
+// max heap
+// priority_queue<int>maxi;
+
+
+// // min heap
+// priority_queue<int,vector<int>,greater<int>> mini;
+
+
+// maxi.push(1);
+// maxi.push(4);
+// maxi.push(6);
+// maxi.push(2);
+// maxi.push(7);
+// cout<<"size"<<maxi.size()<<endl;
+// int n=maxi.size();
+// for(int i=0;i<n;i++)
+// {
+//     cout<<maxi.top()<<" ";
+//     maxi.pop();
+// }
+
+// mini.push(1);
+// mini.push(4);
+// mini.push(6);
+// mini.push(2);
+// mini.push(7);
+// cout<<"size"<<maxi.size()<<endl;
+// int nn=mini.size();
+// for(int i=0;i<nn;i++)
+// {
+//     cout<<mini.top()<<" ";
+//     mini.pop();
+// }
+
+//***********************set***********************************
+
+set<int>s;
+
+s.insert(5);
+s.insert(6);
+s.insert(7);
+s.insert(5);
+s.insert(5);
+s.insert(2);
+s.insert(3);
+s.insert(1);
+
+for(auto i:s)
+{
+    cout<<i<<" ";
+}cout<<endl;
+
+s.erase(s.begin());
+
+for(auto i:s)
+{
+    cout<<i<<" ";
+}cout<<endl;
+
+set<int >::iterator it=s.begin() ;
+
+
+s.erase(it++);
+for(auto i:s)
+{
+    cout<<i<<" ";
+}cout<<endl;
+
+cout<<s.count(3)<<endl;
+
+set<int>:: iterator itr=s.find(5);
+
+for(auto it=itr;it!=s.end();it++)
+{
+    cout<<*it<<" ";
+}cout<<endl;
+
+
+
+
+
 
 
 }
