@@ -46,4 +46,4 @@ cout<<"enter string"<<endl;
 string s;
 cin>>s;
 cout<<getmaxocccharcter(s);
-}
+}l
