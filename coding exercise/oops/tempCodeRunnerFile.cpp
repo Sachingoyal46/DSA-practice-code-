@@ -1,3 +1,8 @@
-
-    C  c1;
-    cout<<c1.chemistry  << c1.physics  << c1.maths<< endl;
+for (int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            cout<<arr[i][j]<<"  ";
+        }
+        cout<<endl;
+    }
