@@ -122,11 +122,66 @@ void insertatposition(node*& head,node *&tail, int data,int position)
         prev->next=temp;
         temp->next=current;
     }
-
-
-
-
 }
+
+void deletion(node*& head,node*&tail,int position)
+{
+    if(head==NULL)
+    {
+        cout<<"can not delete, coz ll is empty"<<endl;
+        return ;
+    }
+
+    if(head==tail)// single elemnts
+    {
+        node *temp=head;
+        delete temp;
+        head=NULL;
+        tail=NULL;
+    }
+    if(position==1)
+    {
+        // first node ko delte kar do
+        node *temp=head;
+        head=temp->next;
+        temp->next=NULL;
+        delete temp;
+
+    }
+    else if(position==lenght(head))
+    {
+        // last node ko delte kar do
+        
+        node *prev=head;
+        while(prev->next!=tail)
+        {
+            prev=prev->next;
+        }
+        prev->next=NULL;
+        delete tail;
+        tail=prev;
+
+    }
+    else{
+        //middlw wali ko delte kar do
+       
+        node* prev=NULL;
+        node *current=head;
+
+        while(position!=1)
+        {
+            prev=current;
+            current=current->next;
+            position--;
+        }
+        prev->next=current->next;
+        current->next=NULL;
+        delete current;
+
+
+    }
+}
+
 
 int main()
 {
@@ -138,6 +193,8 @@ int main()
     insertathead(head,tail,20);
     insertattail(head,tail,30);
     insertatposition(head,tail,90,3);
+    deletion(head,tail,3);
+     
     printll(head);
 
 
