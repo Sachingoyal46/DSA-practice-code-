@@ -55,7 +55,7 @@ void slidingwindow(int *arr,int n,int k)
 int main()
 {
 
-    int arr[]={1,3,-1,-3,5,3,6,7};
+    int arr[]={-2,0,4,-1,-5,6};
     int n=6;
     int k=3;
     slidingwindow(arr,n,k);
