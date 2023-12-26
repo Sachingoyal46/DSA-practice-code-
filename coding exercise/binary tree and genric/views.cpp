@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<map>
 using namespace std;
 
 
@@ -141,12 +142,160 @@ void print_right_view(node * root,int level,vector<int>&arr)
     
 }
 
+void topview(node * root)
+{
+    map<int,int>mapping;
+    queue<pair<node *,int>>q;
+    q.push(make_pair(root,0));
+
+    while(!q.empty())
+    {
+        pair<node *,int> temp=q.front();
+        q.pop();
+        node * x=temp.first;
+        int y=temp.second;
+
+        if(mapping.find(y)==mapping.end())
+        {
+            // not found
+            mapping[y]=x->data;
+        }
+
+        if(x->left!=NULL)
+        {
+            q.push(make_pair(x->left,y-1));
+        }
+
+        if(x->right!=NULL)
+        {
+            q.push(make_pair(x->right,y+1));
+        }
+
+    }
+
+}
+
+void bottomview(node * root)
+{
+    map<int,int>mapping;
+    queue<pair<node *,int>>q;
+    q.push(make_pair(root,0));
+
+    while(!q.empty())
+    {
+        pair<node *,int> temp=q.front();
+        q.pop();
+        node * x=temp.first;
+        int y=temp.second;
+
+        // overraiding karwaoo
+            mapping[y]=x->data;
+        
+
+        if(x->left!=NULL)
+        {
+            q.push(make_pair(x->left,y-1));
+        }
+
+        if(x->right!=NULL)
+        {
+            q.push(make_pair(x->right,y+1));
+        }
+
+    }
+
+    cout<<"bottom elements are"<<endl;
+    for(auto i : mapping)
+    {
+        cout<<i.second<<" ";
+    }
+
+
+}
+
+void leftside_traversal(node * root)
+{
+    if(root==NULL)
+    {
+        return ;
+    }
+    if(root->left==NULL && root->right==NULL)
+    {
+        return ;
+    }
+    cout<<root->data<<" ";
+    if(root->left!=NULL)
+    {
+        leftside_traversal(root->left);
+    }
+    else
+    {
+        leftside_traversal(root->right);
+
+    }
+}
+
+void rightside_traversal(node * root)
+{
+    if(root==NULL)
+    {
+        return ;
+    }
+    if(root->left==NULL && root->right==NULL)
+    {
+        return ;
+    }
+   
+    if(root->right!=NULL)
+    {
+    rightside_traversal(root->right);
+    }
+    else
+    {
+        rightside_traversal(root->left);
+
+    }
+    cout<<root->data<<" ";
+}
+
+void leafnode_traversal(node * root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    if(root->left==NULL && root->right==NULL)
+    {
+        cout<<root->data<<" ";
+    }
+    leafnode_traversal(root->left);
+    leafnode_traversal(root->right);
+}
+
+void boundary_traversal(node * root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    leftside_traversal(root);
+    leafnode_traversal(root);
+    if(root->right!=NULL)
+    {
+        rightside_traversal(root->right);
+    }
+    else
+    {
+        rightside_traversal(root->left);
+    }
+}
+
 int main()
 {
     node * root=createtree();
     level_order_traversal(root);
 
-    vector<int>ans;
+    // vector<int>ans;
 
     // print_left_view(root,0,ans);
     // cout<<"the left view of tree is"<<endl;
@@ -155,16 +304,26 @@ int main()
     //     cout<<ans[i]<<" ";
     // }
 
-    print_right_view(root,0,ans);
-    cout<<"the right view of tree is"<<endl;
-    for(int i=0;i<ans.size();i++)
-    {
-        cout<<ans[i]<<" ";
-    }
+    // print_right_view(root,0,ans);
+    // cout<<"the right view of tree is"<<endl;
+    // for(int i=0;i<ans.size();i++)
+    // {
+    //     cout<<ans[i]<<" ";
+    // }
+
+    // topview(root);
+    // cout<<endl;
+    // bottomview(root);
+
+    boundary_traversal(root);
+    
+
 }
 
 
-// 10 20 40 -1 -1 50 70 110 -1 -1 111 -1 -1 80 -1 -1 30 -1 60 -1 90 112 -1 -1 111 -1 -1
+
+
+// 10 20 40 -1 -1 50 70 110 -1 -1 111 -1 -1 80 -1 -1 30 -1 60 -1 90 112 -1 -1 113 -1 -1
 
 
 
