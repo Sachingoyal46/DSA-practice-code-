@@ -257,17 +257,91 @@ node * bst_to_inorder(int inorder[],int s,int e)
     return root;
 }
 
+void bst_to_doubly(node * root,node * &head)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    //RNL//
+    //R
+    bst_to_doubly(root->right,head);
+    // N
+    root->right=head;
+    if(head!=NULL)
+    {
+        head->left=root;
+    }
+    head=root;
+
+    // L
+     bst_to_doubly(root->left,head);
+}
+void printddlinkedlist(node * head)
+{
+    node * temp=head;
+    cout<<"doubly linked list is"<<endl;
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp=temp->right;
+    }
+}
+
+
+node* DDL_to_bst(node * &head,int n)
+{
+    if(head==NULL || n<=0)
+    {
+        return NULL;
+    }
+    // LNR
+
+    // left
+    node * left=DDL_to_bst(head,n/2);
+    // n
+    node * root=head;
+    root->left=left;
+    head=head->right;
+
+    // R
+    node* right=DDL_to_bst(head,n-n/2-1);
+    root->right=right;
+
+    return root;
+
+
+
+}
+
 
 int main()
 {
+    node * first=new node(10);
+    node * second=new node (20);
+    node * third=new node( 30);
 
+    first->right=second;
+    second->left=first;
+    second->right=third;
+    third->left=second;
 
-    int inorder[]={10,20,30,40,50,60,70};
-    int size=7;
-    int start=0;
-    int last=size-1;
-    node * root=bst_to_inorder(inorder,start,last);
+    node * head=first;
+    int n=3;
+    node* root=DDL_to_bst(head,3);
     levelorder_traversal(root);
+
+    // int inorder[]={10,20,30,40,50,60,70};
+    // int size=7;
+    // int start=0;
+    // int last=size-1;
+    // node * root=bst_to_inorder(inorder,start,last);
+    // levelorder_traversal(root);
+
+
+    // node * head=NULL;
+    // bst_to_doubly(root,head);
+    // printddlinkedlist(head);
 
 
     // node * root=NULL;
