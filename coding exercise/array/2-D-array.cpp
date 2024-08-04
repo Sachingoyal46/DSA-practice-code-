@@ -70,7 +70,7 @@ void swap_transpose(int arr[][4],int row,int col)
     {
         for(int j=i;j<col;j++)
         {
-            swap(arr[i,j],arr[i,j]);
+            swap(arr[i,j],arr[j,i]);
             
         }
        
