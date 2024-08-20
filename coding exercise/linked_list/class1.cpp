@@ -106,7 +106,7 @@ void insertatposition(node*& head,node *&tail, int data,int position)
     }
     else if(position== length+1)
     {
-        insertattail(head,tail,data);
+        insertattail(head,tail,data);  
     }
     else{
         node * temp=new node(data);

@@ -1,0 +1,1 @@
+deleteatposition(head,tail,2);

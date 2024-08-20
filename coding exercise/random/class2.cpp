@@ -3,9 +3,9 @@ using namespace std;
 
 int main() {
 
-	char ch;
-	cin >> ch;
-	cout <<"here: "<< ch << endl;
+	// char ch;
+	// cin >> ch;
+	// cout <<"here: "<< ch << endl;
 
 	// int marks;
 
@@ -25,10 +25,10 @@ int main() {
 
 	// cout << !age << endl;
 	
-	// int a = 20;
-	// int b = 10;
+	int a = 20;
+	int b = 10;
 
-	// cout << (a == b) << endl;
+	cout << (a == b) << endl;
 		
 	// int a = 3;
 	// int b = 2;
